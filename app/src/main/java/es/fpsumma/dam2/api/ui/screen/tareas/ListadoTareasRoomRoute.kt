@@ -13,4 +13,28 @@ fun ListadoTareasRoomRoute(
     vm: TareasViewModel,
     modifier: Modifier = Modifier,
 ){
-    val state by vm.state.collectAsState()}
+    val state by vm.state.collectAsState()
+
+    ListadoTareasContent(
+        state = state,
+        onBack = {
+
+        },
+        onAdd = {
+
+            navController.navigate("TAREA_ADD")
+        },
+        onOpenDetalle = { id ->
+
+            navController.navigate("tarea_view/$id")
+        },
+        onDelete = { id ->
+
+            vm.deleteTareaById(id)
+        },
+        modifier = modifier
+    )
+
+
+
+}
