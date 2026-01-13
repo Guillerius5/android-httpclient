@@ -10,7 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-// Importante: Importamos la entidad porque es lo que devuelve tu ViewModel actual
 import es.fpsumma.dam2.api.data.local.entity.TareaEntity
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -17,9 +17,9 @@ fun DetalleTareaRoomRoute(
     vm: TareasViewModel,
     modifier: Modifier = Modifier
 ) {
-    // 1. Obtenemos el flujo de datos del ViewModel
+
     val tareaFlow = remember(id) { vm.getTarea(id) }
-    // 2. Convertimos el flujo en Estado para la UI
+
     val tarea by tareaFlow.collectAsStateWithLifecycle(initialValue = null)
 
     DetalleTareaContent(
@@ -28,9 +28,9 @@ fun DetalleTareaRoomRoute(
             navController.popBackStack()
         },
         onUpdate = { titulo, descripcion ->
-            // Lógica de negocio
+
             vm.updateTarea(id, titulo, descripcion)
-            // Navegación (volvemos atrás)
+
             navController.popBackStack()
         },
         modifier = modifier
